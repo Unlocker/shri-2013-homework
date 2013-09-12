@@ -13,7 +13,7 @@ DIR="$1"
 [ "$DIR" == "" ] && DIR="."
 PATTERN="\(<title>\)КИТ\(<\/title>\)"
 
-for file in `find $DIR -name '*.html'`
+for file in `find $DIR -type f -name '*.html'`
 do
   if grep -q $PATTERN "$file"; then
     echo $file
